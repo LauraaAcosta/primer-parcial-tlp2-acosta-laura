@@ -11,5 +11,5 @@ export const AssetCategoryModel = sequelize.define("AssetCategory", {
 // * 'categories' (Asset) y 'assets' (Category)
 // ! FALTA COMPLETAR ACA
 
-AssetModel.hasMany(CategoryModel, {trough: AssetCategoryModel, foreingKey: "category_id", as: "category" })
+AssetModel.hasMany(CategoryModel, {trough: AssetCategoryModel, foreingKey: "category_id", as: "category", onDelete:"CASCADE",})
 CategoryModel.belongsToMany(AssetModel, {trough: AssetCategoryModel, foreingKey: "asset_id", as: "assets"})

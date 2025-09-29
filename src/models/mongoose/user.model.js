@@ -20,19 +20,19 @@ const UserSchema = new Schema(
     },
     deletedAt: { type: Date, default: null },
     profile: [{
-      employee_number: {
+      employeeNumber: {
       type: String,
       unique: true, 
       required: true,
     },
-    first_name: {
+    firstName: {
       type: String,
       required: true,
       unique: true,
       minlength: 2,
       maxlength: 50,
     },
-    last_name: {
+    lastName: {
       type: String,
       required: true,
       unique: true,
@@ -45,7 +45,7 @@ const UserSchema = new Schema(
     },
     },],
 
-    // ! FALTA COMPLETAR ACA
+    // ! 
   },
   { timestamps: true }
 );

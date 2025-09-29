@@ -10,3 +10,11 @@ userRoutes.get("/users", getAllUsers);
 
 // * eliminar un usuario por id (usuario autenticado que sea admin)
 userRoutes.delete("/users/:id", deleteUser);
+
+
+app.post (
+    '/users', 
+    validations,
+    applyValidations, 
+    controller
+);
