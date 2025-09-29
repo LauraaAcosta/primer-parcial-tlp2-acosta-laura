@@ -19,6 +19,32 @@ const UserSchema = new Schema(
       default: "secretary",
     },
     deletedAt: { type: Date, default: null },
+    profile: [{
+      employee_number: {
+      type: String,
+      unique: true, 
+      required: true,
+    },
+    first_name: {
+      type: String,
+      required: true,
+      unique: true,
+      minlength: 2,
+      maxlength: 50,
+    },
+    last_name: {
+      type: String,
+      required: true,
+      unique: true,
+      minlength: 2,
+      maxlength: 50,
+    },
+    phone: {
+      type: String,
+      required: false,
+    },
+    },],
+
     // ! FALTA COMPLETAR ACA
   },
   { timestamps: true }
@@ -27,3 +53,5 @@ const UserSchema = new Schema(
 // ! FALTA COMPLETAR ACA
 
 export const UserModel = model("User", UserSchema);
+
+export default UserModel;
